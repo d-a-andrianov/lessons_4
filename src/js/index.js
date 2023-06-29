@@ -47,3 +47,8 @@ console.log (productResult + productCurrency);
 // console.log('--: ', --num);
 // console.log('num: ', num);
 
+// console.log('num: ', num);
+// console.log('num: ', num);
+// console.log('--: ', --num);
+// console.log('num: ', num);
+
