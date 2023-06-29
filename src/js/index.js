@@ -10,45 +10,28 @@ const productCurrency = '$';
 
 const productResult = (productUnits * productPrice);
 
-console.log (productName);
-console.log (productResult + productCurrency);
+console.log(productName);
+console.log(productResult + productCurrency);
 
-// для тренировки
+// ДЗ 4.2_1 задача
 
-// document.body.innerHTML = 
-// `<h1 class="title">Привет ${productName}</h1>
-// <p>Мне 34 года</p>`;
+{
+  const productName = prompt('Укажите наименование товара');
+  console.log(typeof productName);
 
+  const productUnits = +prompt('Укажите количество товара');
+  console.log(typeof productUnits);
 
-// const myName = 'Дима';
-// console.log (`Меня зовут ${myName}`);
+  const productCategory = prompt('Укажите категорию товара');
+  console.log(typeof productName);
 
-// console.log (`Меня зовут` + myName);
+  const productPrice = +prompt('Укажите цену товара');
+  console.log(typeof productUnits);
 
-// console.log (2 === 2);
+  const productCurrency = 'деревянных';
 
-// console.log (Symbol('key1') === Symbol('key1'));
+  const productResult = (productUnits * productPrice);
 
-// let num = 5;
-
-// console.log('num: ', num);
-// console.log('++: ', num++);
-// console.log('num: ', num);
-// console.log('num: ', num);
-// console.log('--: ', num--);
-// console.log('num: ', num);
-
-// let num = 3;
-
-// console.log('num: ', num);
-// console.log('++: ', ++num);
-// console.log('num: ', num);
-// console.log('num: ', num);
-// console.log('--: ', --num);
-// console.log('num: ', num);
-
-// console.log('num: ', num);
-// console.log('num: ', num);
-// console.log('--: ', --num);
-// console.log('num: ', num);
+  console.log(`На складе ${productUnits} единицы товара "${productName}" на сумму ${productPrice} ${productCurrency}`);
+}
 
