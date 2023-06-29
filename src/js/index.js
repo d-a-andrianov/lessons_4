@@ -32,6 +32,6 @@ console.log(productResult + productCurrency);
 
   const productResult = (productUnits * productPrice);
 
-  console.log(`На складе ${productUnits} единицы товара "${productName}" на сумму ${productPrice} ${productCurrency}`);
+  console.log(`На складе ${productUnits} единицы товара "${productName}" на сумму ${productResult} ${productCurrency}`);
 }
 
