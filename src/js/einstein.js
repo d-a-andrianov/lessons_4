@@ -2,19 +2,10 @@
 
 // ДЗ 4.2_2 задача
 
-{
-  const myWeight = '92';
-  const speedLight = '3e8';
-
-  const energy = (myWeight * speedLight**2);
-  console.log (`Энергия моего тела равна ${energy} Дж`);
-}
-
 // {
 //   const myWeight = '92';
 //   const speedLight = '3e8';
 
-//   const energy = (myWeight * speedLight);
+//   const energy = (myWeight * speedLight**2);
 //   console.log (`Энергия моего тела равна ${energy} Дж`);
 // }
-
