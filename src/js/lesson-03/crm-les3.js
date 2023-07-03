@@ -8,30 +8,20 @@
 
   const productUnits = +prompt('Укажите количество товара');
   console.log(typeof productUnits);
-  if (isNaN(productUnits)) {
-    alert('Вы ввели некорректные данные');
-  }
 
   const productCategory = prompt('Укажите категорию товара');
   console.log(typeof productName);
 
   const productPrice = +prompt('Укажите цену товара');
   console.log(typeof productUnits);
-  if (isNaN(productPrice)) {
+
+  if (isNaN(productUnits) || isNaN(productPrice)) {
     alert('Вы ввели некорректные данные');
+  } else {
+    const productCurrency = 'деревянных';
+    const productResult = (productUnits * productPrice);
+    
+    console.log(`На складе ${productUnits} единицы товара "${productName}" на сумму ${productResult} ${productCurrency}`);
   }
-
-  const productCurrency = 'деревянных';
-  const productResult = (productUnits * productPrice);
-
-  console.log(`На складе ${productUnits} единицы товара "${productName}" на сумму ${productResult} ${productCurrency}`);
-
-
-  // if (isNaN(productUnits || productPrice)) {
-  //   console.log(`На складе ${productUnits} единицы товара "${productName}" на сумму ${productResult} ${productCurrency}`); }
-
-  //   else { (isNaN(productUnits || productPrice)) 
-  //     alert('Вы ввели некорректные данные');
-  //   }
 }
 
