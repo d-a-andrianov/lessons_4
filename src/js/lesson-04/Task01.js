@@ -9,7 +9,7 @@ const getChange = euro => {
   return euro * 1.2 * 73
 };
 
-console.log(getChange(100));
+console.log(`Стоимость покупки ${getChange(100)} рублей`);
 
 // const goToShop = (money) => {
 //   console.log('пришли в молочный магазин');
