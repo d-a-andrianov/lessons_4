@@ -15,6 +15,8 @@
   const productPrice = +prompt('Укажите цену товара');
   console.log(typeof productUnits);
 
+  // ДЗ 4.3_1 Задача_проверка что пользователь ввёл число, выдать ошибку если не число
+
   if (isNaN(productUnits) || isNaN(productPrice)) {
     alert('Вы ввели некорректные данные');
   } else {
