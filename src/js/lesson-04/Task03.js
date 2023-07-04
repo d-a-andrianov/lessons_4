@@ -34,7 +34,7 @@ const calculate = (basket, goodsCount, promo) => {
   }
 }
 
-console.log(calculate(35000, 11));
-console.log(calculate(35000, 11));
+console.log(calculate(35000, 11, 0));
+console.log(calculate(35000, 11, 0));
 console.log(calculate(35000, 11, 'METHED'));
 console.log(calculate(35000, 11, 'G3H2Z1'));
