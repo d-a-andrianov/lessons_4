@@ -5,11 +5,7 @@
 // Строка начинается с большой буквы, остальные буквы маленькие
 // Пример:  "привет Мир" => "Привет мир"
 
-const getChangeText = text => {
-  return text = "Привет мир"
-};
-
-console.log (getChangeText(`привет Мир`));
-
-// const result = getChangeText(`привет Мир`);
-// console.log(result);
+const getChangeText = (str) => {
+  return str[0].toUpperCase() + str.substring(1).toLowerCase();
+}
+console.log(getChangeText('привет Мир'));
