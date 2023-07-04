@@ -1,32 +1,43 @@
 'use strict'
 
-const goToShop = (money) => {
-  console.log('пришли в молочный магазин');
+// Задача 4.4.1
+// Напишите функцию конвертер, которая на вход принимает стоимость покупки в евро и выводит результат в рублях
+// 1 евро = 1.2 доллара,
+// 1 доллар = 73 рубля.
 
-  const getMilk = (cash) => {
-    if (cash >= 60) {
-      cash -= 60;
-      return 'молоко';
-    }
-  };
+const getChange = euro => {
+  return euro * 1.2 * 73
+};
 
-  const milk = getMilk(money);
+console.log(getChange(100));
 
-  console.log('пришли в хлебный киоск');
+// const goToShop = (money) => {
+//   console.log('пришли в молочный магазин');
 
-  const getBread = (cash) => {
-    if (cash >= 40) {
-      cash -= 40;
-      return 'хлеб';
-    }
-  };
+//   const getMilk = (cash) => {
+//     if (cash >= 60) {
+//       cash -= 60;
+//       return 'молоко';
+//     }
+//   };
 
-  const bread = getBread(money);
+//   const milk = getMilk(money);
 
-  console.log(money);
+//   console.log('пришли в хлебный киоск');
 
-  return `${milk} ${bread}`;
-}
+//   const getBread = (cash) => {
+//     if (cash >= 40) {
+//       cash -= 40;
+//       return 'хлеб';
+//     }
+//   };
 
-const result = goToShop(100);
-console.log('result: ', result);
+//   const bread = getBread(money);
+
+//   console.log(money);
+
+//   return `${milk} ${bread}`;
+// }
+
+// const result = goToShop(100);
+// console.log('result: ', result);
