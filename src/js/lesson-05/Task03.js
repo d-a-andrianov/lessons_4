@@ -12,6 +12,5 @@ function reverseStr(str) {
     newStr += str.charAt(i);
   }
   return newStr;
-  b = str.length;
 }
 console.log (reverseStr('Привет мир!'));
