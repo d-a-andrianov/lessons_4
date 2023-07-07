@@ -11,7 +11,3 @@ const failedStudents = ['Сидоров', 'Смирнов', 'Попов'];
 const result = allStudents.filter(el_allStudents => !failedStudents.includes(el_allStudents));
 
 console.log (result);
-
-// var marvelHeroes =  heroes.filter(function(hero) {
-//     return hero.franchise == “Marvel”;
-// });
