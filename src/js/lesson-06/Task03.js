@@ -18,5 +18,3 @@ const names= ['Noah', 'Liam', 'Mason', 'Jacob', 'Robot', 'William', 'Ethan', 'Mi
 const addPrefix = names.map( names => 'Mr ' + names);
 
 console.log(addPrefix);
-
-// не ясно на сколько это всё правильно
