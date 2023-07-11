@@ -1,10 +1,38 @@
 'use strict'
 
+// Задача 4.6.2
+// Напишите функцию getAverageValue
+// для получения среднеарифметического значения
+// с округлением в меньшую сторону до целого числа
+// С помощью этой функции получите средний чек за день, в массиве данные всех чеков за день:
+// const allCashbox = [4500, 3210, 650, 1250, 7830, 990, 13900, 370];
 
+const allCashbox = [4500, 3210, 650, 1250, 7830, 990, 13900, 370];
 
-const allStudents = ['Иванов', 'Петров', 'Сидоров', 'Кузнецов', 'Смирнов', 'Попов', 'Соколов'];
-const failedStudents = ['Сидоров', 'Смирнов', 'Попов'];
+const getAverageValue = (cashbox) => {
+  // в переменной sum будет храниться сумма всех эл-тов массива
+  let sum = 0; 
+  // начинаем цикл с 0 эл-та, пока i меньше длины цикл будет работать, добавляя 1 (или переходя к след. эл-ту массива)
+  for (let i = 0; i < cashbox.length; i++) {
+  // на каждой итерации прибавляем к сумме значение текущего элемента массива
+    sum += cashbox[i];
+  }
+  return sum / cashbox.length; // возвращаем среднее арифметическое значение
+};
 
-const result = allStudents.filter(el_allStudents => !failedStudents.includes(el_allStudents));
+console.log(getAverageValue(allCashbox));
 
-    console.log (allStudents[allStudents.length-1]);
+// второй вариант решения
+
+// const allCashbox = [4500, 3210, 650, 1250, 7830, 990, 13900, 370];
+
+// const getAverage = (allCashbox) => {
+//   // acc — текущее значение аккумулятора; arr — сам массив, который мы перебираем. Используем каллбек ф-ию.
+//   const sum = allCashbox.reduce((acc, arr) => acc + arr, 0);
+//   // длина массива (кол-во чеков)
+//   const length = allCashbox.length;
+//   return sum / length;
+// };
+
+// console.log(getAverage(allCashbox));
+
