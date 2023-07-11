@@ -14,6 +14,9 @@
 
 const names= ['Noah', 'Liam', 'Mason', 'Jacob', 'Robot', 'William', 'Ethan', 'Michael', 'Alexander'];
 
-const namesnew = names.map( name => 'Mr ' + name);
+// Метод map() создаёт новый массив с результатом вызова указанной функции для каждого элемента массива.
+const addPrefix = names.map( names => 'Mr ' + names);
 
-console.log(namesnew);
+console.log(addPrefix);
+
+// не ясно на сколько это всё правильно
