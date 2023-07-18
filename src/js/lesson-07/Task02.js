@@ -33,9 +33,9 @@ function generator(num, n, m) {
   for (let i = 0; i < num; i++) {
 
     // создаем рандом число, с округлением вверх, умножая на разницу между минимальным и максимальным числом, прибавить минимальное число
-    random = Math.ceil((Math.random() * (Math.max(n, m) - Math.min(n, m))) + Math.min(n, m));
 
-    // random = Math.ceil((Math.random() * 60));
+    // Мы умножаем на (max-min), чтобы преобразовать диапазон [0,1] в [0, max-min]. Далее, чтобы получить случайное число в нужном диапазоне, мы складываем min. Наконец, мы округляем это до целого числа, используя Math.ceil()
+    random = Math.ceil(Math.random() * (Math.max(n, m) - Math.min(n, m))) + Math.min(n, m);
 
     // кладем данные в массив newArr после вычисления, которое выполняется в random
     newArr.push(random);
