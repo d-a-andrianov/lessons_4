@@ -22,12 +22,15 @@ function guessNumber() {
 
   console.log(randomNumber);
 
-  // +prompt принимает только число
   let userNumber = prompt('введите число', '');
+
+  while (true) {
 
   if (userNumber === null) {
     break;
-  } 
+  }
+  // +prompt принимает только число
+  userNumber = +userNumber;
 
   if (randomNumber < userNumber) {
     alert('Меньше! (пользовательское число больше, чем загаданное) ');
@@ -37,12 +40,15 @@ function guessNumber() {
     alert('Больше! (пользовательское число меньше, чем загаданное) ');
   }
 
-  if (randomNumber == userNumber) alert('Правильно! (пользователь вводит правильное число) ');
+  if (randomNumber == userNumber) {
+    alert('Правильно! (пользователь вводит правильное число) ');
+  }
 
-  if (isNaN(userNumber)) alert('Введи число! (пользователь ввел не число) ');
+  if (isNaN(userNumber)) {
+    alert('Введи число! (пользователь ввел не число) ');
+  }
 
- 
-
+}
   }
 
 console.log(guessNumber());
