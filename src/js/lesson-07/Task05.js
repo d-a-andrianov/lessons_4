@@ -22,42 +22,41 @@ function guessNumber() {
 
   console.log(randomNumber);
 
-  let userNumber = prompt('введите число', '');
-
   while (true) {
 
-  if (userNumber === null) {
-    break;
+    let userNumber = prompt('введите число', '');
+
+    if (userNumber === null) {
+      break;
+    }
+    // +prompt принимает только число
+    userNumber = +userNumber;
+
+    if (isNaN(userNumber)) {
+      alert('Введи число! (пользователь ввел не число) ');
+      continue;
+    }
+
+    else if (userNumber < 1 || userNumber > 100) {
+      alert('Введите число от 1 до 100');
+      continue;
+    }
+
+    else if (randomNumber == userNumber) {
+      alert('Правильно! (пользователь вводит правильное число) ');
+      break;
+    }
+
+    else if (randomNumber < userNumber) {
+      alert('Меньше! (пользовательское число больше, чем загаданное) ');
+      // continue;
+    }
+
+    else if (randomNumber > userNumber) {
+      alert('Больше! (пользовательское число меньше, чем загаданное) ');
+      // continue;
+    }
   }
-  // +prompt принимает только число
-  userNumber = +userNumber;
-
-  if (userNumber < 1 || userNumber > 100) {
-    alert( 'Введите число от 1 до 100' );
-    continue;
-  } 
-
-  if (randomNumber < userNumber) {
-    alert('Меньше! (пользовательское число больше, чем загаданное) ');
-    // continue;
-  }
-
-  if (randomNumber > userNumber) {
-    alert('Больше! (пользовательское число меньше, чем загаданное) ');
-    // continue;
-  }
-
-  if (isNaN(userNumber)) {
-    alert('Введи число! (пользователь ввел не число) ');
-    // continue;
-  }
-
-  if (randomNumber == userNumber) {
-    alert('Правильно! (пользователь вводит правильное число) ');
-    break;
-  }
-
 }
-  }
 
 console.log(guessNumber());
