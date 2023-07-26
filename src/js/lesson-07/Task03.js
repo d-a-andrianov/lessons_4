@@ -30,7 +30,7 @@ function generator(num, n, m, str = '') {  // запускаем функцию,
 
   let random;  // задаем переменную random для генерации случайных чисел
 
-  if (str === 'even') {
+  if (str === 'odd') {
     // если строка равна even
     while (i < num) {
       // запускаем цикл пока i меньше чем num
@@ -43,7 +43,7 @@ function generator(num, n, m, str = '') {  // запускаем функцию,
     }
   }
 
-  } else if (str === 'odd') {
+  } else if (str === 'even') {
     // если строка равна odd
     while (i < num) {
       // запускаем цикл пока i меньше чем num
