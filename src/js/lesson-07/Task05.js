@@ -32,20 +32,29 @@ function guessNumber() {
   // +prompt принимает только число
   userNumber = +userNumber;
 
+  if (userNumber < 1 || userNumber > 100) {
+    alert( 'Введите число от 1 до 100' );
+    continue;
+  } 
+
   if (randomNumber < userNumber) {
     alert('Меньше! (пользовательское число больше, чем загаданное) ');
+    // continue;
   }
 
   if (randomNumber > userNumber) {
     alert('Больше! (пользовательское число меньше, чем загаданное) ');
-  }
-
-  if (randomNumber == userNumber) {
-    alert('Правильно! (пользователь вводит правильное число) ');
+    // continue;
   }
 
   if (isNaN(userNumber)) {
     alert('Введи число! (пользователь ввел не число) ');
+    // continue;
+  }
+
+  if (randomNumber == userNumber) {
+    alert('Правильно! (пользователь вводит правильное число) ');
+    break;
   }
 
 }
