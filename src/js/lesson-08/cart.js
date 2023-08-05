@@ -1,5 +1,3 @@
-'use strict'
-
 // Создайте файл cart.js, подключите к html-файлу
 // Создайте объект cart — корзина
 // Объект будет содержать следующие свойства:
@@ -43,57 +41,62 @@
 // После вызвать метод print для вывода информации в консоль
 
 const cart = {
-  // пустой массив - это товары
   items: [],
-  // общая стоимость корзины
   totalPrice: 0,
-  // количество товаров
   count: 0,
 
+
+  getTotalPrice() {
+    return this.totalPrice;
+  },
   // получить общую стоимость товаров
-  getTotalPrice () {
-    return this.calculateItemPrice();
-  },
 
+  add(name, price, amount=1) {
+    const item = {
+      name,
+      price,
+      amount,
+    }
+    this.items.push(item);
+    // пушим в свойство items значения объекта item (они потом передаются вызывом метода add)
+    this.increaseCount(amount);
+    this.calculateItemPrice();
+  },
   // добавить товар
-  add (item, price, amount = 1) {
-    const good = {
-			item,
-			price,
-			amount,
-		};
-    this.items.push(good);
-		this.increaseCount(amount);
+
+  increaseCount(amount) {
+    this.count = this.count + amount
+    // на этом этапе складываем действующее значение кол-ва товаров и добавляем amount (то что уже передали в метод add)
   },
+  
+  //  увеличить количество товаров
 
-  // увеличить количество товаров
-	increaseCount(amount) {
-		this.count += amount;
-	},
-
+  calculateItemPrice() {
+    this.totalPrice = this.items.reduce((acc, item) => acc+ (item.price*item.amount) ,0)
+  },
+  // вместо item можем указать в фигурных скобках значения которые будет считать (price и amount), например: (acc, {price,amount})
   // посчитать общую стоимость товаров
-	calculateItemPrice() {
-		return this.items.reduce((acc, item) => {
-			return acc + item.price * item.amount;
-		}, 0);
-	},
-
+  
+  clear() {
+    this.items = [];
+    this.totalPrice = 0;
+    this.count = 0;
+  },
   // очистить корзину
-	clear() { 
-		this.items = [];
-		this.totalPrice = 0;
-		this.count = 0;
-	},
 
-  // распечатать корзину
-	print() {
-		console.log(JSON.stringify(this.items));
-		console.log(` Total price: ${this.getTotalPrice()}`);
-		console.log(` Count: ${this.count}`);
-	},
+  print() {
+    console.log(`${JSON.stringify(this.items)}  
+    ${this.totalPrice}
+    ${this.count}`
+    );
+  },  // распечатать корзину
 };
 
-cart.add('note', 30000, 1);
-cart.add('TV', 15000, 2);
-cart.add('keyboard', 300, 10);
+cart.add("TV",100,3);
+cart.add("note",2000,5);
+cart.add("iphone",50000);
+// добавляем в корзину товары, то что в скобках (параметры) передается в name, price, amount
 cart.print();
+
+// cart.clear();
+// cart.print();
