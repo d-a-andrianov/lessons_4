@@ -63,7 +63,7 @@ const cart = {
     this.items.push(item);
     // пушим в свойство items значения объекта item (они потом передаются вызывом метода add)
     this.increaseCount(amount);
-    this.calculateItemPrice();
+    // this.calculateItemPrice();
   },
   // добавить товар
 
