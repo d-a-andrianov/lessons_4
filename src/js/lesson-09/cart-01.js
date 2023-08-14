@@ -44,13 +44,16 @@
 
 const cart = {
   items: [],
-  totalPrice: 0,
   count: 0,
 
-
-  getTotalPrice() {
-    return this.totalPrice;
+  get totalPrice() {
+    return this.calculateItemPrice();
   },
+
+
+  // getTotalPrice() {
+  //   return this.totalPrice;
+  // },
   // получить общую стоимость товаров
 
   add(name, price, amount=1) {
@@ -73,8 +76,8 @@ const cart = {
   
   //  увеличить количество товаров
 
-  calculateItemPrice() {
-    this.totalPrice = this.items.reduce((acc, item) => acc+ (item.price*item.amount) ,0)
+  this.calculateItemPrice() {
+    return items.reduce((acc, item) => acc+ (item.price*item.amount) ,0)
   },
   // вместо item можем указать в фигурных скобках значения которые будет считать (price и amount), например: (acc, {price,amount})
   // посчитать общую стоимость товаров
