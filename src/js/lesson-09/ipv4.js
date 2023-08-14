@@ -24448,4 +24448,10 @@ const listIPv4 = [
   "10.0.32.20"
 ];
 
+// console.log(Array.from(new Set(listIPv4)));
+
+function unique(listIPv4) {
+  return Array.from(new Set(listIPv4));
+}
+
 console.log(Array.from(new Set(listIPv4)));
