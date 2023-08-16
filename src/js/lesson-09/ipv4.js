@@ -24451,7 +24451,11 @@ const listIPv4 = [
 // console.log(Array.from(new Set(listIPv4)));
 
 function unique(listIPv4) {
-  return Array.from(new Set(listIPv4));
+  const num = Array.from(new Set(listIPv4));
+  return num.length;
 }
 
-console.log(Array.from(new Set(listIPv4)));
+// console.log(Array.from(new Set(listIPv4)));
+// console.log(unique(listIPv4));
+
+console.log(unique(listIPv4));
