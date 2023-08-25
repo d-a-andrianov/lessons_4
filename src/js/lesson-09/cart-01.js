@@ -54,7 +54,7 @@ const cart = {
   // },
   // получить общую стоимость товаров
 
-  add(name, price, amount = 1) {
+  add(name, price, amount=1) {
     const item = {
       name,
       price,
