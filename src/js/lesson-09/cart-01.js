@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 // Создайте файл cart.js, подключите к html-файлу
 // Создайте объект cart — корзина
@@ -20,7 +20,7 @@
 // getTotalPrice()
 // метод возвращает значение свойства totalPrice
 // calculateItemPrice()
-// пересчитывает стоимость всей корзины используя метод reduce и записывает значение в totalPrice 
+// пересчитывает стоимость всей корзины используя метод reduce и записывает значение в totalPrice
 
 // increaseCount()
 // Принимает один параметр(число)
@@ -54,13 +54,14 @@ const cart = {
   // },
   // получить общую стоимость товаров
 
-  add(name, price, amount=1) {
+  add(name, price, amount = 1) {
     const item = {
       name,
       price,
       amount,
-    }
+    };
     this.items.push(item);
+    // eslint-disable-next-line max-len
     // пушим в свойство items значения объекта item (они потом передаются вызывом метода add)
     this.increaseCount(amount);
     // this.calculateItemPrice();
@@ -68,19 +69,19 @@ const cart = {
   // добавить товар
 
   increaseCount(amount) {
-    this.count = this.count + amount
+    this.count += amount;
     // на этом этапе складываем действующее значение кол-ва товаров и добавляем amount (то что уже передали в метод add)
   },
-  
+
   //  увеличить количество товаров
 
   calculateItemPrice() {
-    return this.items.reduce((acc, item) => acc+ (item.price*item.amount) ,0)
+    return this.items.reduce((acc, item) => acc + (item.price * item.amount), 0);
   },
   // вместо item можем указать в фигурных скобках значения которые будет считать (price и amount), например: (acc, {price,amount})
   // посчитать общую стоимость товаров
   // начинаем с 0 элемента (типо как цикл)
-  
+
   clear() {
     this.items = [];
     this.totalPrice = 0;
@@ -91,14 +92,14 @@ const cart = {
   print() {
     console.log(`${JSON.stringify(this.items)}  
     ${this.totalPrice}
-    ${this.count}`
+    ${this.count}`,
     );
-  },  // распечатать корзину
+  }, // распечатать корзину
 };
 
-cart.add("TV",100,3);
-cart.add("note",2000,5);
-cart.add("iphone",50000);
+cart.add('TV', 100, 3);
+cart.add('note', 2000, 5);
+cart.add('iphone', 50000);
 // добавляем в корзину товары, то что в скобках (параметры) передается в name, price, amount
 cart.print();
 
