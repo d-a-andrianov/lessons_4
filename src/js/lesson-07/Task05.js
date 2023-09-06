@@ -29,7 +29,7 @@ function guessNumber() {
     if (userNumber === null) {
       break;
     }
-    // +prompt принимает только число
+    // prompt возвращает текст, знаком + приводим тип данных к числовому
     userNumber = +userNumber;
 
     if (isNaN(userNumber)) {
