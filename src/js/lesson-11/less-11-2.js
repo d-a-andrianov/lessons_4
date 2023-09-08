@@ -13,7 +13,7 @@ const array = [];
 const genArray = array => {
 
   // переменная для рандомного числа
-  let randomNum;ё
+  let randomNum;
 
   // рандомное число
   randomNum = Math.ceil(Math.random() * 11);
