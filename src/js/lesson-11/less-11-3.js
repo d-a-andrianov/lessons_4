@@ -8,7 +8,7 @@ const rectangle = {
 
   // объявляем геттер, который будет получать данные (считать периметр фигуры)
   get perimeter() {
-    return (this._width + this._height) * 2 + ' sm*2';
+    return (this._width + this._height) * 2 + ' sm';
   },
 
   // объявляем геттер, который будет получать данные (считать периметр фигуры)

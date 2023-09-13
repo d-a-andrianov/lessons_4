@@ -100,8 +100,9 @@ const cart = {
 
   clear() {
     this.items = [];
-    this.totalPrice = 0;
+    // this.totalPrice = 0;
     this.count = 0;
+    this._discount = 0;
   },
   // очистить корзину
 
@@ -120,6 +121,11 @@ cart.add('iphone', 50000);
 // задаем промокод для скидки
 cart.discount = 'NEWYEAR';
 cart.print();
-
-// cart.clear();
+cart.clear();
 // cart.print();
+
+cart.add('xbox', 20000, 3);
+cart.add('pods', 2000, 5);
+cart.add('mouse', 500);
+// cart.clear();
+cart.print();
