@@ -23,7 +23,7 @@
 
     // сама игра описана ф-ией start, которая возвращается
     return function start() {
-      // let playerChoice = prompt(`Выбери: ${figures.join(', ')}`,'');
+      // let playerChoice = prompt(`Выбери: ${figures.join(', ')}?`);
       let playerChoice = prompt('Выбери: камень, ножницы или бумага?');
       
       if (playerChoice === "") {
