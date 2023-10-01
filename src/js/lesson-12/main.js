@@ -1,5 +1,7 @@
 'use strict';
 
+// какой-то пример из урока
+
 // вызываем ф-ию
 const sumFive = window.factorySum(5);
 
