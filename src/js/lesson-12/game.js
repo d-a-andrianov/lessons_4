@@ -7,6 +7,7 @@ const figures = ['камень', 'ножницы', 'бумага',];
 // const getRandomIntInclusive = (min, max) => {
 // };
 
+// Ф-ия для получения рандомного числа, округление вниз, умножаем на 3, чтобы число было не больше 2. Итого число от 0 до 2
 const getRandomInt = (max) => {
 return Math.floor(Math.random() * 3);
 };
