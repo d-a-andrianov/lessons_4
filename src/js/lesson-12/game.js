@@ -35,6 +35,9 @@ playerChoice = figures.find(item =>item.startsWith(playerChoice.toLowerCase()));
 
 if (playerChoice === null) {
 alert ('Вы хотите завершить игру?')
+resultGame();
+return
+
 // не завершает игру при нажатии ОК
 } else if (playerChoice === '') {
 alert ('Вы ничего не ввели. Сделайте выбор')
@@ -58,34 +61,34 @@ gameplay(playerChoice, computerChoice);
 // ф-ия с правилами игры
 function gameplay(pc, user) {
 
-if (pc === 'камень' && user === 'камень') {
+if (pc === figures[0] && user === figures[0]) {
 alert('Ничья');
-} else if (pc === 'камень' && user === 'ножницы') {
+} else if (pc === figures[0] && user === figures[1]) {
 alert(`ПК выиграл ${++result.computer}`);
 game();
-} else if (pc === 'камень' && user === 'бумага') {
+} else if (pc === figures[0] && user === figures[2]) {
 alert(`Мы выиграли ${++result.player}`);
 game();
-} else if (pc === 'ножницы' && user === 'камень') {
+} else if (pc === figures[1] && user === figures[0]) {
 alert(`Мы выиграли ${++result.player}`);
 game();
-} else if (pc === 'ножницы' && user === 'ножницы') {
+} else if (pc === figures[1] && user === figures[1]) {
 alert('Ничья');
 game();
-} else if (pc === 'ножницы' && user === 'бумага') {
+} else if (pc === figures[1] && user === figures[2]) {
 alert(`ПК выиграл ${++result.computer}`);
 game();
-} else if (pc === 'бумага' && user === 'камень') {
+} else if (pc === figures[2] && user === figures[0]) {
 alert(`ПК выиграл ${++result.computer}`);
 game();
-} else if (pc === 'бумага' && user === 'ножницы') {
+} else if (pc === figures[2] && user === figures[1]) {
 alert(`Мы выиграли ${++result.player}`);
 game();
-} else if (pc === 'бумага' && user === 'бумага') {
+} else if (pc === figures[2] && user === figures[2]) {
 alert('Ничья');
 game();
 }
-console.log('pc', result.computer)
+console.log('pc', result.computer, )
 console.log('player', result.player)
 
 }
