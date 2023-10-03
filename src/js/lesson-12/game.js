@@ -1,106 +1,96 @@
 'use strict';
 
 (() => {
-const figures = ['камень', 'ножницы', 'бумага',];
+  const figures = ['камень', 'ножницы', 'бумага',];
 
-// ф-ия получает число от мин до макс включительно (ссылка на функцию на мдм в описании)
-// const getRandomIntInclusive = (min, max) => {
-// };
+  // ф-ия получает число от мин до макс включительно (ссылка на функцию на мдм в описании)
+  // const getRandomIntInclusive = (min, max) => {
+  // };
 
-// Ф-ия для получения рандомного числа, округление вниз, умножаем на 3, чтобы число было не больше 2. Итого число от 0 до 2
-const getRandomInt = (max) => {
-return Math.floor(Math.random() * 3);
-};
+  // Ф-ия для получения рандомного числа, округление вниз, умножаем на 3, чтобы число было не больше 2. Итого число от 0 до 2
+  const getRandomInt = (max) => {
+    return Math.floor(Math.random() * 3);
+  };
 
-console.log(getRandomInt());
+  console.log(getRandomInt());
 
-// сама игра
-const game = () => {
-// в замыкании хранится объект result, в нем результаты игр. Если кто-то выиграл значение увеличивается
-const result = {
-player: 0,
-computer: 0,
-};
+  // сама игра
+  const game = () => {
+    // в замыкании хранится объект result, в нем результаты игр. Если кто-то выиграл значение увеличивается
+    const result = {
+      player: 0,
+      computer: 0,
+    };
 
-// сама игра описана ф-ией start, которая возвращается
-return function start() {
-// Можно так: let playerChoice = prompt(`Выбери: ${figures.join(', ')}?`);
-let playerChoice = prompt('Выбери: камень, ножницы или бумага?');
+    // сама игра описана ф-ией start, которая возвращается
+    return function start() {
+      // Можно так: let playerChoice = prompt(`Выбери: ${figures.join(', ')}?`);
+      let playerChoice = prompt('Выбери: камень, ножницы или бумага?');
 
-// присваиваем переменной computerChoice массив (getRandomInt() создает рандомное число и выбирает по индексу из массива рандомное значение: КНБ)
-const computerChoice = figures[getRandomInt()];
+      // присваиваем переменной computerChoice массив (getRandomInt() создает рандомное число и выбирает по индексу из массива рандомное значение: КНБ)
+      const computerChoice = figures[getRandomInt()];
 
-// Ф-ия для подставления слова, при вводе первой буквы/слогово одного из слов: камень, ножницы, бумага
-playerChoice = figures.find(item =>item.startsWith(playerChoice.toLowerCase()));
+      // Ф-ия для подставления слова, при вводе первой буквы/слогово одного из слов: камень, ножницы, бумага
+      playerChoice = figures.find(item => item.startsWith(playerChoice.toLowerCase()));
 
-if (playerChoice === null) {
-alert ('Вы хотите завершить игру?')
-resultGame();
-return
+      if (playerChoice === null) {
+        alert('Вы хотите завершить игру?')
+        if (confirm('Точно хотите завершить игру?'))
+        resultGame();
+        return;
 
-// не завершает игру при нажатии ОК
-} else if (playerChoice === '') {
-alert ('Вы ничего не ввели. Сделайте выбор')
-} else if (!figures.includes(playerChoice)) {
-alert ('Можно выбирать только предложенные варианты: камень, ножницы, бумага')
-} else {
-console.log('Запуск игры')
-// запускаем ф-ию с правилами игры
-gameplay(playerChoice, computerChoice);
-}
+        // не завершает игру при нажатии ОК
+      } else if (playerChoice === '') {
+        alert('Вы ничего не ввели. Сделайте выбор')
+      } else if (!figures.includes(playerChoice)) {
+        alert('Можно выбирать только предложенные варианты: камень, ножницы, бумага')
+      } else {
+        console.log('Запуск игры')
+        // запускаем ф-ию с правилами игры
+        gameplay(playerChoice, computerChoice);
+      }
 
-// if (playerChoice === "") {
-// confirm('Вы ничего не ввели. Сделайте выбор')
-// } else if (playerChoice === null) {
-// confirm('Вы хотите завершить игру?');
-// } else if (!figures.includes(playerChoice)) {
-// alert('Можно выбирать только предложенные варианты');
-// start();
-// }
+      // if (playerChoice === "") {
+      // confirm('Вы ничего не ввели. Сделайте выбор')
+      // } else if (playerChoice === null) {
+      // confirm('Вы хотите завершить игру?');
+      // } else if (!figures.includes(playerChoice)) {
+      // alert('Можно выбирать только предложенные варианты');
+      // start();
+      // }
 
-// ф-ия с правилами игры
-function gameplay(pc, user) {
+      // ф-ия с правилами игры
+      function gameplay(pc, user) {
 
-if (pc === figures[0] && user === figures[0]) {
-alert('Ничья');
-} else if (pc === figures[0] && user === figures[1]) {
-alert(`ПК выиграл ${++result.computer}`);
-game();
-} else if (pc === figures[0] && user === figures[2]) {
-alert(`Мы выиграли ${++result.player}`);
-game();
-} else if (pc === figures[1] && user === figures[0]) {
-alert(`Мы выиграли ${++result.player}`);
-game();
-} else if (pc === figures[1] && user === figures[1]) {
-alert('Ничья');
-game();
-} else if (pc === figures[1] && user === figures[2]) {
-alert(`ПК выиграл ${++result.computer}`);
-game();
-} else if (pc === figures[2] && user === figures[0]) {
-alert(`ПК выиграл ${++result.computer}`);
-game();
-} else if (pc === figures[2] && user === figures[1]) {
-alert(`Мы выиграли ${++result.player}`);
-game();
-} else if (pc === figures[2] && user === figures[2]) {
-alert('Ничья');
-game();
-}
-console.log('pc', result.computer, )
-console.log('player', result.player)
+        if ((pc === user)) {
+          alert('Ничья');
+          game();
+        
+          // поиск ответа из массива по индексу
+        } if ((pc === figures[0] && user === figures[1]) || (pc === figures[1] && user === figures[2]) || (pc === figures[2] && user === figures[0])) {
+          ++result.computer;
+          alert(`ПК выиграл: ${result.computer} - Мы выиграли: ${result.player}`);
+          game();
 
-}
-return start();
-};
-};
+        } if ((pc === figures[0] && user === figures[2]) || (pc === figures[1] && user === figures[0]) || (pc === figures[2] && user === figures[1])) {
+          ++result.player;
+          alert(`ПК выиграл: ${result.computer} - Мы выиграли: ${result.player}`);
+          game();
+        }
+
+        console.log('pc', result.computer,)
+        console.log('player', result.player)
+
+      }
+      return start();
+    };
+  };
 
 
 
 
-// игра вынесена в window.RPS
-window.RPS = game;
+  // игра вынесена в window.RPS
+  window.RPS = game;
 })();
 
 //
