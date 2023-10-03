@@ -35,7 +35,7 @@
 
       if (playerChoice === null) {
         alert('Вы хотите завершить игру?')
-        if (confirm('Точно хотите завершить игру?'))
+        // if (confirm('Точно хотите завершить игру?'))
         resultGame();
         return;
 
