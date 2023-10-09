@@ -26,6 +26,15 @@
     return function start() {
       // Можно так: let playerChoice = prompt(`Выбери: ${figures.join(', ')}?`);
       let playerChoice = prompt('Выбери: камень, ножницы или бумага?');
+      
+      // завершении игры при нажатии на отмену
+      if (playerChoice === null) {
+        alert('Вы хотите завершить игру?')
+        // сообщение при нажатии ОК
+        if (confirm(`ПК выиграл: ${result.computer} - Мы выиграли: ${result.player}`))
+        resultGame();
+        return;
+      }
 
       // присваиваем переменной computerChoice массив (getRandomInt() создает рандомное число и выбирает по индексу из массива рандомное значение: КНБ)
       const computerChoice = figures[getRandomInt()];
@@ -33,14 +42,7 @@
       // Ф-ия для подставления слова, при вводе первой буквы/слогово одного из слов: камень, ножницы, бумага
       playerChoice = figures.find(item => item.startsWith(playerChoice.toLowerCase()));
 
-      if (playerChoice === null) {
-        alert('Вы хотите завершить игру?')
-        // if (confirm('Точно хотите завершить игру?'))
-        resultGame();
-        return;
-
-        // не завершает игру при нажатии ОК
-      } else if (playerChoice === '') {
+      if (playerChoice === '') {
         alert('Вы ничего не ввели. Сделайте выбор')
       } else if (!figures.includes(playerChoice)) {
         alert('Можно выбирать только предложенные варианты: камень, ножницы, бумага')
