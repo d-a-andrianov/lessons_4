@@ -29,9 +29,7 @@
       
       // завершении игры при нажатии на отмену
       if (playerChoice === null) {
-        alert('Вы хотите завершить игру?')
-        // сообщение при нажатии ОК
-        if (confirm(`ПК выиграл: ${result.computer} - Мы выиграли: ${result.player}`))
+        alert(`Игра завершена. ПК выиграл: ${result.computer} - Мы выиграли: ${result.player}`)
         resultGame();
         return;
       }
