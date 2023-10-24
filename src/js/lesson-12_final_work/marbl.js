@@ -56,7 +56,7 @@
       function gameplay(user, pc) {
 
         // проверка на 0 или отрицательное значение, для завершения игры
-        if ((result.computer <= 0) || (result.player <= 0)) {
+        if (((result.computer <= 0) || (result.player <= 0)) || ((result.computer >= 10) || (result.player >= 10)))  {
           alert(`Игра завершена. У ПК шариков: ${result.computer} - У нас шариков: ${result.player}`)
           game();
 
