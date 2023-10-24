@@ -55,8 +55,19 @@
       // ф-ия с правилами игры
       function gameplay(user, pc) {
 
+<<<<<<< HEAD
         // проверка на победу ПК
         if (((pc % 2 == 0) && (user % 2 == 0)) || ((pc % 2 !== 0) && (user % 2 !== 0))) {
+=======
+        // проверка на 0 или отрицательное значение, для завершения игры
+        if (((result.computer <= 0) || (result.player <= 0)) || ((result.computer >= 10) || (result.player >= 10)))  {
+          alert(`Игра завершена. У ПК шариков: ${result.computer} - У нас шариков: ${result.player}`)
+          game();
+
+          // проверка на победу ПК
+        } 
+        else if (((pc % 2 == 0) && (user % 2 == 0)) || ((pc % 2 !== 0) && (user % 2 !== 0))) {
+>>>>>>> 435780479cc47586a650ae0a6a6b87f6441cd828
           result.computer += +user;
           result.player -= +user;
           alert(`ПК выиграл, кол-во шаров у ПК: ${result.computer}`);
