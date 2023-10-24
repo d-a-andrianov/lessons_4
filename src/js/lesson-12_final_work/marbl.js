@@ -71,7 +71,7 @@
         }
       }
 
-      // проверка на 0 или отрицательное значение, для завершения игры (получается вне ф-ии gameplay)
+      // проверка на 0 или отрицательное значение, для завершения игры (вне ф-ии gameplay)
       if (((result.computer <= 0) || (result.player <= 0)) || ((result.computer >= 10) || (result.player >= 10))) {
         alert(`Игра завершена. У ПК шариков: ${result.computer} - У нас шариков: ${result.player}`)
         return;
@@ -82,7 +82,7 @@
       return start();
     };
   };
-
+  
   // игра вынесена в window.RPS
   window.RPS = game;
 })();
