@@ -66,7 +66,7 @@
           // Победа пользователя. Присваиваем в объект значение переменной через +=. Знаком + меняем переменную с prompt на число
           result.player += +user;
           result.computer -= +user;
-          alert(`Мы угадали`);
+          alert(`Игрок угадал`);
           game();
         }
       }
@@ -86,6 +86,6 @@
     };
   };
   
-  // игра вынесена в window.RPS
-  window.RPS = game;
+  // игра вынесена в window.Marbl
+  window.Marbl = game;
 })();

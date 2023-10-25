@@ -1,6 +1,6 @@
 'use strict';
 
 // вызываем ф-ию
-const startGame = window.RPS();
+const startGame = window.Marbl();
 // вызываем ф-ию
 startGame();
