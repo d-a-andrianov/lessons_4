@@ -59,23 +59,26 @@
         if (((pc % 2 == 0) && (user % 2 == 0)) || ((pc % 2 !== 0) && (user % 2 !== 0))) {
           result.computer += +user;
           result.player -= +user;
-          alert(`ПК выиграл, кол-во шаров у ПК: ${result.computer}`);
+          alert(`ПК угадал`);
           game();
 
         } else {
           // Победа пользователя. Присваиваем в объект значение переменной через +=. Знаком + меняем переменную с prompt на число
           result.player += +user;
           result.computer -= +user;
-          alert(`Мы выиграли, кол-во шаров у нас: ${result.player}`);
+          alert(`Мы угадали`);
           game();
         }
       }
 
       // проверка на 0 или отрицательное значение, для завершения игры (вне ф-ии gameplay)
-      if (((result.computer <= 0) || (result.player <= 0)) || ((result.computer >= 10) || (result.player >= 10))) {
-        alert(`Игра завершена. У ПК шариков: ${result.computer} - У нас шариков: ${result.player}`)
-        return;
+      if ((result.computer <= 0) || (result.player >= 10))  {
+        alert(`Игра завершена. Мы набрали 10 шаров и выиграли, ура!`)
+        return;   
 
+      } else if ((result.player <= 0) || (result.computer >= 10)) {
+        alert(`Игра завершена. ПК набрал 10 шаров и выиграл, попытайте удачу в следующий раз!`)
+        return;   
       }
       console.log('player', result.player)
       console.log('pc', result.computer,)
